@@ -1,0 +1,8 @@
+﻿municipality_code,id,field,original_value,patched_value,verified_at,verification_source,reason
+23229,23229-PT-0001,ID,,23229-PT-0001,2026-09-23,https://www.city.toyoake.lg.jp/secure/11549/23229_toilet.csv,原本のIDが空欄。原本の行順1・名称唐竹公園・住所豊明市二村台３丁目２番地を照合し、一意のIDを付与。
+23229,23229-PT-0002,ID,,23229-PT-0002,2026-09-23,https://www.city.toyoake.lg.jp/secure/11549/23229_toilet.csv,原本のIDが空欄。原本の行順2・名称中央公園・住所豊明市新田町吉池３番地１を照合し、一意のIDを付与。
+23229,23229-PT-0003,ID,,23229-PT-0003,2026-09-23,https://www.city.toyoake.lg.jp/secure/11549/23229_toilet.csv,原本のIDが空欄。原本の行順3・名称落合公園・住所豊明市新栄町三丁目３００番地を照合し、一意のIDを付与。
+23229,23229-PT-0004,ID,,23229-PT-0004,2026-09-23,https://www.city.toyoake.lg.jp/secure/11549/23229_toilet.csv,原本のIDが空欄。原本の行順4・名称三崎水辺公園・住所豊明市三崎町三崎１番地１を照合し、一意のIDを付与。
+23229,23229-PT-0005,ID,,23229-PT-0005,2026-09-23,https://www.city.toyoake.lg.jp/secure/11549/23229_toilet.csv,原本のIDが空欄。原本の行順5・名称大蔵池公園・住所豊明市新栄町三丁目４６０番地を照合し、一意のIDを付与。
+23229,23229-PT-0006,ID,,23229-PT-0006,2026-09-23,https://www.city.toyoake.lg.jp/secure/11549/23229_toilet.csv,原本のIDが空欄。原本の行順6・名称大原公園・住所豊明市栄町大原１番地１を照合し、一意のIDを付与。
+23229,23229-PT-0007,ID,,23229-PT-0007,2026-09-23,https://www.city.toyoake.lg.jp/secure/11549/23229_toilet.csv,原本のIDが空欄。原本の行順7・名称勅使水辺公園・住所豊明市沓掛町勅使２番地１を照合し、一意のIDを付与。

@@ -1,0 +1,3 @@
+municipality_code,id,field,original_value,patched_value,verified_at,verification_source,reason
+12235,LL1223510007,利用終了時間,3月・4月・9月・10月は17時まで；5月・6月・7月・8月は18時まで；11月・12月・1月・2月は16時まで,,2026-09-29,data/raw/12-千葉県/12235-匝瑳市/public-toilet/public_toilet.csv,終了時刻欄に季節別の説明文が入っているため時刻欄は空欄とし原文を利用可能時間特記事項へ移す。
+12235,LL1223510007,利用可能時間特記事項,,3月・4月・9月・10月は17時まで；5月・6月・7月・8月は18時まで；11月・12月・1月・2月は16時まで,2026-09-29,data/raw/12-千葉県/12235-匝瑳市/public-toilet/public_toilet.csv,終了時刻欄に入っていた季節別利用時間を原文のまま保持する。

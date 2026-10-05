@@ -1,0 +1,224 @@
+﻿prefecture_code,prefecture_name,region,module,municipality_codes,municipality_names,stage
+01,北海道,hokkaido,chippubetsu_fussa_matsuyama,01434,秩父別町,normalize
+01,北海道,hokkaido,furano_oga_sanjo_oyabe_sakai,01229,富良野市,normalize
+01,北海道,hokkaido,hakodate_aomori_daisen_akiruno,01202,函館市,normalize
+01,北海道,hokkaido,legacy26_standard,01211,網走市,normalize
+01,北海道,hokkaido,legacy32_standard,01231;01304;01425;01465;01604;01647;01691,恵庭市;新篠津村;上砂川町;剣淵町;新冠町;足寄町;別海町,normalize
+01,北海道,hokkaido,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+02,青森県,tohoku,hakodate_aomori_daisen_akiruno,02201,青森市,normalize
+02,青森県,tohoku,hirakawa_namerikawa,02210,平川市,normalize
+02,青森県,tohoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+03,岩手県,tohoku,legacy32_standard,03201;03202;03215,盛岡市;宮古市;奥州市,normalize
+03,岩手県,tohoku,standard_superset,03207,久慈市,normalize
+03,岩手県,tohoku,ichinoseki,03209,一関市,normalize
+03,岩手県,tohoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+04,宮城県,tohoku,legacy32_standard,04212,登米市,normalize
+04,宮城県,tohoku,miyagi,04202;04203;04206;04207;04209;04213;04214;04322;04323;04361;04401;04421;04501,石巻市;塩竈市;白石市;名取市;多賀城市;栗原市;東松島市;村田町;柴田町;亘理町;松島町;大和町;涌谷町,normalize
+04,宮城県,tohoku,standard_superset,04100,仙台市,normalize
+04,宮城県,tohoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+05,秋田県,tohoku,furano_oga_sanjo_oyabe_sakai,05206,男鹿市,normalize
+05,秋田県,tohoku,hakodate_aomori_daisen_akiruno,05212,大仙市,normalize
+05,秋田県,tohoku,noshiro_namegata_meguro,05202,能代市,normalize
+05,秋田県,tohoku,standard_superset,05209,鹿角市,normalize
+05,秋田県,tohoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+06,山形県,tohoku,yamagata_funagata,06363,舟形町,normalize
+06,山形県,tohoku,yamagata_tendo,06210,天童市,normalize
+06,山形県,tohoku,yamagata_simple10,06201;06202;06203;06204;06205;06206;06207;06208;06209;06211;06212;06213;06302;06321;06322;06323;06324;06362;06365;06402;06461,山形市;米沢市;鶴岡市;酒田市;新庄市;寒河江市;上山市;村山市;長井市;東根市;尾花沢市;南陽市;中山町;河北町;西川町;朝日町;大江町;最上町;大蔵村;白鷹町;遊佐町,normalize
+06,山形県,tohoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+07,福島県,tohoku,aizu_machida,07202,会津若松市,normalize
+07,福島県,tohoku,legacy32_standard,07207,須賀川市,normalize
+07,福島県,tohoku,simple_location,07201;07203,福島市;郡山市,normalize
+07,福島県,tohoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+08,茨城県,kanto,hitachi_shibuya_nakano_sabae,08202,日立市,normalize
+08,茨城県,kanto,kasama_gosen_miyoshi_tamba_otoyo_genkai_tamana_nagomi,08216,笠間市,normalize
+08,茨城県,kanto,noshiro_namegata_meguro,08233,行方市,normalize
+08,茨城県,kanto,legacy32_standard,08205;08235,石岡市;つくばみらい市,normalize
+08,茨城県,kanto,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+09,栃木県,kanto,legacy32_standard,09214,さくら市,normalize
+09,栃木県,kanto,standard_superset,09201,宇都宮市,normalize
+09,栃木県,kanto,tochigi,09208;09211,小山市;矢板市,normalize
+09,栃木県,kanto,simple_location,09204,佐野市,normalize
+09,栃木県,kanto,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+10,群馬県,kanto,alias_variants,10421,中之条町,normalize
+10,群馬県,kanto,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+11,埼玉県,kanto,sakado_otsu,11239,坂戸市,normalize
+11,埼玉県,kanto,alias_variants,11201;11211,川越市;本庄市,normalize
+11,埼玉県,kanto,kumagaya,11202,熊谷市,normalize
+11,埼玉県,kanto,legacy32_standard,11230,新座市,normalize
+11,埼玉県,kanto,saitama_remaining,11210;11219,加須市;上尾市,normalize
+11,埼玉県,kanto,standard_superset,11203;11225,川口市;入間市,normalize
+11,埼玉県,kanto,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+12,千葉県,kanto,chiba_standard_variants,12202;12205;12211;12347,銚子市;館山市;成田市;多古町,normalize
+12,千葉県,kanto,legacy32_standard,12220;12329,流山市;栄町,normalize
+12,千葉県,kanto,simple_location,12207,松戸市,normalize
+12,千葉県,kanto,yachiyo,12221,八千代市,normalize
+12,千葉県,kanto,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+13,東京都,kanto,aizu_machida,13209,町田市,normalize
+13,東京都,kanto,alias_variants,13308,奥多摩町,normalize
+13,東京都,kanto,chippubetsu_fussa_matsuyama,13218,福生市,normalize
+13,東京都,kanto,hakodate_aomori_daisen_akiruno,13228,あきる野市,normalize
+13,東京都,kanto,hitachi_shibuya_nakano_sabae,13113;13114,渋谷区;中野区,normalize
+13,東京都,kanto,legacy32_standard,13116;13221,豊島区;清瀬市,normalize
+13,東京都,kanto,noshiro_namegata_meguro,13110,目黒区,normalize
+13,東京都,kanto,shinagawa,13109,品川区,normalize
+13,東京都,kanto,tama_shinshiro_kumano_kurume_taku,13224,多摩市,normalize
+13,東京都,kanto,archive_standard,13117,北区,normalize
+13,東京都,kanto,bunkyo,13105,文京区,normalize
+13,東京都,kanto,minato,13103,港区,normalize
+13,東京都,kanto,standard_superset,13201;13225;13229,八王子市;稲城市;西東京市,normalize
+13,東京都,kanto,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+14,神奈川県,kanto,kanagawa,14201,横須賀市,normalize
+14,神奈川県,kanto,kamakura,14204,鎌倉市,normalize
+14,神奈川県,kanto,legacy32_standard,14207,茅ヶ崎市,normalize
+14,神奈川県,kanto,simple_location,14208,逗子市,normalize
+14,神奈川県,kanto,nearstandard,14211,秦野市,normalize
+14,神奈川県,kanto,atsugi,14212,厚木市,normalize
+14,神奈川県,kanto,hayama,14301,葉山町,normalize
+14,神奈川県,kanto,legacy32_standard,14362,大井町,normalize
+14,神奈川県,kanto,manazuru_nagano_yokkaichi,14383,真鶴町,normalize
+14,神奈川県,kanto,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+15,新潟県,chubu,furano_oga_sanjo_oyabe_sakai,15204,三条市,normalize
+15,新潟県,chubu,kasama_gosen_miyoshi_tamba_otoyo_genkai_tamana_nagomi,15218,五泉市,normalize
+15,新潟県,chubu,standard_superset,15212,村上市,normalize
+15,新潟県,chubu,uonuma,15225,魚沼市,normalize
+15,新潟県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+16,富山県,chubu,furano_oga_sanjo_oyabe_sakai,16209,小矢部市,normalize
+16,富山県,chubu,hirakawa_namerikawa,16206,滑川市,normalize
+16,富山県,chubu,legacy32_standard,16204,魚津市,normalize
+16,富山県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+17,石川県,chubu,alias_variants,17361,津幡町,normalize
+17,石川県,chubu,legacy32_standard,17202;17206;17207;17407,七尾市;加賀市;羽咋市;中能登町,normalize
+17,石川県,chubu,ishikawa_variants,17203;17204;17205;17324;17384;17386;17461,小松市;輪島市;珠洲市;川北町;志賀町;宝達志水町;穴水町,normalize
+17,石川県,chubu,standard_superset,17201;17210;17212;17365;17463,金沢市;白山市;野々市市;内灘町;能登町,normalize
+17,石川県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+18,福井県,chubu,fukui_english39_special,18204;18205;18208;18209;18210;18322,小浜市;大野市;あわら市;越前市;坂井市;永平寺町,normalize
+18,福井県,chubu,fukui_english39_standard,18201;18202;18206;18404;18423;18442;18481;18483;18501,福井市;敦賀市;勝山市;南越前町;越前町;美浜町;高浜町;おおい町;若狭町,normalize
+18,福井県,chubu,hitachi_shibuya_nakano_sabae,18207,鯖江市,normalize
+18,福井県,chubu,fukui_ikeda,18382,池田町,normalize
+18,福井県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+19,山梨県,chubu,nearstandard,19209,北杜市,normalize
+19,山梨県,chubu,yamanashi_custom,19425,山中湖村,normalize
+19,山梨県,chubu,yamanashi_remaining,19211;19365,笛吹市;身延町,normalize
+19,山梨県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+20,長野県,chubu,karuizawa_uda_kainan_hiroshima,20321,軽井沢町,normalize
+20,長野県,chubu,legacy32_standard,20214;20403,茅野市;高森町,normalize
+20,長野県,chubu,manazuru_nagano_yokkaichi,20201,長野市,normalize
+20,長野県,chubu,nagano_custom,20202;20203;20205;20207,松本市;上田市;飯田市;須坂市,normalize
+20,長野県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+21,岐阜県,chubu,gifu,21209,羽島市,normalize
+21,岐阜県,chubu,legacy32_standard,21203,高山市,normalize
+21,岐阜県,chubu,gifu_custom,21202,大垣市,normalize
+21,岐阜県,chubu,gifu_remaining,21208,瑞浪市,normalize
+21,岐阜県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+22,静岡県,chubu,shizuoka,22100;22203;22206;22207;22208;22209;22211;22212;22213;22214;22215;22216;22219;22220;22222;22223;22224;22225;22226;22301;22302;22305;22306;22341,静岡市;沼津市;三島市;富士宮市;伊東市;島田市;磐田市;焼津市;掛川市;藤枝市;御殿場市;袋井市;下田市;裾野市;伊豆市;御前崎市;菊川市;伊豆の国市;牧之原市;東伊豆町;河津町;松崎町;西伊豆町;清水町,normalize
+22,静岡県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+23,愛知県,chubu,kasama_gosen_miyoshi_tamba_otoyo_genkai_tamana_nagomi,23236,みよし市,normalize
+23,愛知県,chubu,legacy32_reviewed,23207,豊川市,normalize
+23,愛知県,chubu,legacy32_standard,23209;23214;23215;23228;23231,碧南市;蒲郡市;犬山市;岩倉市;田原市,normalize
+23,愛知県,chubu,nearstandard,23211,豊田市,normalize
+23,愛知県,chubu,tama_shinshiro_kumano_kurume_taku,23221,新城市,normalize
+23,愛知県,chubu,toyoake_ikaruga,23229,豊明市,normalize
+23,愛知県,chubu,aichi_custom,23203;23210;23226,一宮市;刈谷市;尾張旭市,normalize
+23,愛知県,chubu,nagakute,23238,長久手市,normalize
+23,愛知県,chubu,nagoya,23100,名古屋市,normalize
+23,愛知県,chubu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+24,三重県,kinki,manazuru_nagano_yokkaichi,24202,四日市市,normalize
+24,三重県,kinki,standard_superset,24210;24324,亀山市;東員町,normalize
+24,三重県,kinki,tama_shinshiro_kumano_kurume_taku,24212,熊野市,normalize
+24,三重県,kinki,suzuka,24207,鈴鹿市,normalize
+24,三重県,kinki,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+25,滋賀県,kinki,legacy32_standard,25202;25212,彦根市;高島市,normalize
+25,滋賀県,kinki,sakado_otsu,25201,大津市,normalize
+25,滋賀県,kinki,standard_superset,25204,近江八幡市,normalize
+25,滋賀県,kinki,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+26,京都府,kinki,legacy32_reviewed,26204,宇治市,normalize
+26,京都府,kinki,legacy32_standard,26201,福知山市,normalize
+26,京都府,kinki,kyoto,26100,京都市,normalize
+26,京都府,kinki,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+27,大阪府,kinki,furano_oga_sanjo_oyabe_sakai,27140,堺市,normalize
+27,大阪府,kinki,legacy32_reviewed,27215,寝屋川市,normalize
+27,大阪府,kinki,legacy32_standard,27208;27209;27223;27232,貝塚市;守口市;門真市;阪南市,normalize
+27,大阪府,kinki,nearstandard,27361,熊取町,normalize
+27,大阪府,kinki,osaka_prefecture,*,*,normalize
+27,大阪府,kinki,standard_superset,27203,豊中市,normalize
+27,大阪府,kinki,hirakata,27210,枚方市,normalize
+27,大阪府,kinki,kawachinagano,27216,河内長野市,normalize
+27,大阪府,kinki,osaka_city,27100,大阪市,normalize
+27,大阪府,kinki,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+28,兵庫県,kinki,aioi,28208,相生市,normalize
+28,兵庫県,kinki,alias_variants,28229,たつの市,normalize
+28,兵庫県,kinki,kasama_gosen_miyoshi_tamba_otoyo_genkai_tamana_nagomi,28223,丹波市,normalize
+28,兵庫県,kinki,karuizawa_uda_kainan_hiroshima,28585,香美町,normalize
+28,兵庫県,kinki,kobe,28100,神戸市,normalize
+28,兵庫県,kinki,legacy32_standard,28204,西宮市,normalize
+28,兵庫県,kinki,takarazuka,28214,宝塚市,normalize
+28,兵庫県,kinki,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+29,奈良県,kinki,alias_variants,29205,橿原市,normalize
+29,奈良県,kinki,karuizawa_uda_kainan_hiroshima,29212,宇陀市,normalize
+29,奈良県,kinki,legacy32_standard,29203,大和郡山市,normalize
+29,奈良県,kinki,toyoake_ikaruga,29344,斑鳩町,normalize
+29,奈良県,kinki,ikoma,29209,生駒市,normalize
+29,奈良県,kinki,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+30,和歌山県,kinki,karuizawa_uda_kainan_hiroshima,30202,海南市,normalize
+30,和歌山県,kinki,wakayama_prefecture,*,*,normalize
+30,和歌山県,kinki,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+31,鳥取県,chugoku,tottori,31201,鳥取市,normalize
+31,鳥取県,chugoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+32,島根県,chugoku,legacy32_standard,32207,江津市,normalize
+32,島根県,chugoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+33,岡山県,chugoku,okayama_city,33100,岡山市,normalize
+33,岡山県,chugoku,kibichuo,33681,吉備中央町,normalize
+33,岡山県,chugoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+34,広島県,chugoku,hiroshima,34202;34204;34208;34210;34212;34304,呉市;三原市;府中市;庄原市;東広島市;海田町,normalize
+34,広島県,chugoku,karuizawa_uda_kainan_hiroshima,34100,広島市,normalize
+34,広島県,chugoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+35,山口県,chugoku,yamaguchi,35202;35206;35207;35212;35213;35215;35305;35343,宇部市;防府市;下松市;柳井市;美祢市;周南市;周防大島町;田布施町,normalize
+35,山口県,chugoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+36,徳島県,shikoku,legacy32_standard,36202;36387,鳴門市;美波町,normalize
+36,徳島県,shikoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+37,香川県,shikoku,alias_variants,37208,三豊市,normalize
+37,香川県,shikoku,takamatsu,37201,高松市,normalize
+37,香川県,shikoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+38,愛媛県,shikoku,chippubetsu_fussa_matsuyama,38201,松山市,normalize
+38,愛媛県,shikoku,legacy32_standard,38215;38402,東温市;砥部町,normalize
+38,愛媛県,shikoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+39,高知県,shikoku,kasama_gosen_miyoshi_tamba_otoyo_genkai_tamana_nagomi,39344,大豊町,normalize
+39,高知県,shikoku,legacy32_reviewed,39206;39208;39210,須崎市;宿毛市;四万十市,normalize
+39,高知県,shikoku,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+40,福岡県,kyushu,legacy32_standard,40218,春日市,normalize
+40,福岡県,kyushu,tama_shinshiro_kumano_kurume_taku,40203,久留米市,normalize
+40,福岡県,kyushu,kitakyushu,40100,北九州市,normalize
+40,福岡県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+41,佐賀県,kyushu,kasama_gosen_miyoshi_tamba_otoyo_genkai_tamana_nagomi,41387,玄海町,normalize
+41,佐賀県,kyushu,tama_shinshiro_kumano_kurume_taku,41204,多久市,normalize
+41,佐賀県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+42,長崎県,kyushu,legacy32_standard,42203;42308,島原市;時津町,normalize
+42,長崎県,kyushu,standard_superset,42209;42211;42307,対馬市;五島市;長与町,normalize
+42,長崎県,kyushu,sasebo,42202,佐世保市,normalize
+42,長崎県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+43,熊本県,kyushu,kasama_gosen_miyoshi_tamba_otoyo_genkai_tamana_nagomi,43206;43369,玉名市;和水町,normalize
+43,熊本県,kyushu,koshi,43216,合志市,normalize
+43,熊本県,kyushu,kumamoto_takamori,43428,高森町,normalize
+43,熊本県,kyushu,legacy32_standard,43348,美里町,normalize
+43,熊本県,kyushu,nearstandard,43215;43433,天草市;南阿蘇村,normalize
+43,熊本県,kyushu,standard_superset,43468,氷川町,normalize
+43,熊本県,kyushu,taragi,43505,多良木町,normalize
+43,熊本県,kyushu,uki_taketomi,43213,宇城市,normalize
+43,熊本県,kyushu,simple_location,43403,大津町,normalize
+43,熊本県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+44,大分県,kyushu,legacy32_standard,44208,竹田市,normalize
+44,大分県,kyushu,standard_superset,44211,宇佐市,normalize
+44,大分県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+45,宮崎県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+46,鹿児島県,kyushu,alias_variants,46221,志布志市,normalize
+46,鹿児島県,kyushu,legacy32_standard,46214;46223;46225;46492;46502,垂水市;南九州市;姶良市;肝付町;南種子町,normalize
+46,鹿児島県,kyushu,simple_location,46201,鹿児島市,normalize
+46,鹿児島県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+47,沖縄県,kyushu,alias_variants,47211,沖縄市,normalize
+47,沖縄県,kyushu,legacy32_reviewed,47327,北中城村,normalize
+47,沖縄県,kyushu,legacy32_standard,47201;47302;47357,那覇市;大宜味村;南大東村,normalize
+47,沖縄県,kyushu,standard_superset,47350,南風原町,normalize
+47,沖縄県,kyushu,uki_taketomi,47381,竹富町,normalize
+47,沖縄県,kyushu,tools.normalize_public_toilet,exact39,official 39-column schema only,standard
+36,徳島県,shikoku,tokushima_prefecture,*,*,normalize
+39,高知県,shikoku,simple_location,39205,土佐市,normalize

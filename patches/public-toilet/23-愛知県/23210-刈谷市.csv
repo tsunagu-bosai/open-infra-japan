@@ -1,0 +1,5 @@
+﻿municipality_code,id,field,original_value,patched_value,verified_at,verification_source,reason
+23210,3400200306,利用開始時間,6:00,06:00,2026-09-23,data/raw/23-愛知県/23210-刈谷市/public-toilet/232106_public_toilet_20260401.csv,時刻の意味を変えず標準のhh:mm表記に整形。
+23210,3400200309,利用開始時間,6:00,06:00,2026-09-23,data/raw/23-愛知県/23210-刈谷市/public-toilet/232106_public_toilet_20260401.csv,時刻の意味を変えず標準のhh:mm表記に整形。
+23210,3400200309-2,ID,3400200309,3400200309-2,2026-09-23,data/raw/23-愛知県/23210-刈谷市/public-toilet/232106_public_toilet_20260401.csv,原本のNOが3行で重複。行順171・名称岩ケ池公園・緯度35.042076で区別し、一意の接尾番号を付与。
+23210,3400200309-3,ID,3400200309,3400200309-3,2026-09-23,data/raw/23-愛知県/23210-刈谷市/public-toilet/232106_public_toilet_20260401.csv,原本のNOが3行で重複。行順172・名称三豊公園・緯度34.980806で区別し、一意の接尾番号を付与。

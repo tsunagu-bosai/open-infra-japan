@@ -1,0 +1,2 @@
+﻿municipality_code,id,field,original_value,patched_value,verified_at,verification_source,reason
+11217,L64,車椅子使用者用トイレ有無,1,有,2026-09-24,https://opendata.pref.saitama.lg.jp/resource_download/4575,boolean field uses numeric 1; normalize to controlled vocabulary 有

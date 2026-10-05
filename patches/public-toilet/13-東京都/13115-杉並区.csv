@@ -1,0 +1,5 @@
+municipality_code,id,field,original_value,patched_value,verified_at,verification_source,reason
+13115,131156C00178,緯度,139.5930222,35.69901288,2026-09-19,manual_map_verification,latitude_longitude_swapped
+13115,131156C00178,経度,35.69901288,139.5930222,2026-09-19,manual_map_verification,latitude_longitude_swapped
+13115,131156C00254,緯度,139.6223794,35.69886812,2026-09-19,manual_map_verification,latitude_longitude_swapped
+13115,131156C00254,経度,35.69886812,139.6223794,2026-09-19,manual_map_verification,latitude_longitude_swapped

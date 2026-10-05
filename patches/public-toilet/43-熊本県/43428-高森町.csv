@@ -1,0 +1,2 @@
+﻿municipality_code,id,field,original_value,patched_value,verified_at,verification_source,reason
+43428,0000000010,全国地方公共団体コード,434282,434281,2026-09-24,https://www.town.kumamoto-takamori.lg.jp/life/5/,高森防災公園の原本値434282は高森町の全国地方公共団体コードと不一致。高森町公式サイトの法人番号3000020434281および自治体マスターの標準地域コード43428を照合し、434281へ補正。
