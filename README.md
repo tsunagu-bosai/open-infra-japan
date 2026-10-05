@@ -1,5 +1,7 @@
 # Open Infra Japan
 
+[![Validate normalized data](https://github.com/tsunagu-bosai/open-infra-japan/actions/workflows/validate.yml/badge.svg)](https://github.com/tsunagu-bosai/open-infra-japan/actions/workflows/validate.yml)
+
 全国の自治体・公的機関が公開している施設オープンデータを収集し、共通形式で利用できるよう整理・正規化するプロジェクトです。
 
 現在は主に **公衆トイレ** と **バリアフリー関連施設** のデータを整備しています。
