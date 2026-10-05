@@ -340,22 +340,29 @@ def normalize_publisher_municipality_code(
         )
 
     expected = six_digit_municipality_code(code5)
-    field = "全国地方公共団体コード"
-    raw = (row.get(field) or "").strip()
 
-    if raw == expected:
-        return
+    for field in (
+        "全国地方公共団体コード",
+        "所在地_全国地方公共団体コード",
+    ):
+        raw = (row.get(field) or "").strip()
 
-    # Spreadsheet/CSV export may drop a leading zero from a 6-digit code.
-    if raw and raw.zfill(6) == expected:
-        append_note(row, f"原データ{field}={raw}")
-        row[field] = expected
-        return
+        if not raw:
+            continue
 
-    raise RuntimeError(
-        f"{municipality_dir}: {field}={raw!r} "
-        f"does not match expected {expected!r}"
-    )
+        if raw == expected:
+            continue
+
+        # Spreadsheet/CSV export may drop a leading zero from a 6-digit code.
+        if raw.zfill(6) == expected:
+            append_note(row, f"原データ{field}={raw}")
+            row[field] = expected
+            continue
+
+        raise RuntimeError(
+            f"{municipality_dir}: {field}={raw!r} "
+            f"does not match expected {expected!r}"
+        )
 
 
 def normalize_file(path: Path, schema: list[str], overwrite: bool, only_standard: bool = False) -> tuple[int, int]:
