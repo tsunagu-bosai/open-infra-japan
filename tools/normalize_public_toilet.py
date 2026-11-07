@@ -341,10 +341,9 @@ def normalize_publisher_municipality_code(
 
     expected = six_digit_municipality_code(code5)
 
-    for field in (
-        "全国地方公共団体コード",
-        "所在地_全国地方公共団体コード",
-    ):
+    # Only the publisher's municipality code identifies the source dataset.
+    # A facility address can legitimately belong to a neighboring municipality.
+    for field in ("全国地方公共団体コード",):
         raw = (row.get(field) or "").strip()
 
         if not raw:

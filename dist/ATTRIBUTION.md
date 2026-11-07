@@ -5,6 +5,22 @@
 割引16件の座標出典は `refill-discount-coordinate-attribution.csv` に収録しています。Geolonia住所データの住所代表点と、OpenStreetMap由来の施設周辺代表点をsource_idごとに区別しています。国土地理院住所検索API由来だった5件は、出典と再利用条件が確認できるOSM座標へ置き換えました。2022年3月31日に閉店したタリーズコーヒー横浜市大附属病院店は現行サービスCSVから除外しています。
 給水スポットや店舗の営業状況・設備稼働・個別のサービス提供状況には未確認のものがあり、掲載は現況を保証しません。
 
+## 公衆トイレ座標補完
+
+公開施設CSVには、公衆トイレの既存住所を照合して追加した住所・施設代表座標が1,073件あります。座標は施設入口の実測位置とは限らず、GeoloniaおよびJageocoderは住所参照点です。施設名、住所、施設ID、既存座標は補完処理で変更していません。行単位の元施設、照合住所、座標、ライセンス、URL、帰属文、照合方法は [`public-toilet-coordinate-attribution.csv`](public-toilet-coordinate-attribution.csv) を参照してください。再適用元の台帳は `catalog/public_toilet_coordinate_supplements.csv` です。
+
+| 座標出典 | 件数 | 出典・条件 |
+| --- | ---: | --- |
+| Geolonia Japanese Addresses v2 | 368 | CC BY 4.0。住所代表点。出典と加工の表示が必要です。 |
+| Jageocoder 複合住所辞書 | 680 | 辞書README（2025-04-23）の二次利用条件・指定出典を記録。住所代表点です。 |
+| 自治体の公衆トイレデータ | 24 | 仙台市18、豊中市3、東京都オープンデータカタログ2、福井県1。台帳記録のCC BY 4.0と各出典URLを引き継いでいます。 |
+| 国土地理院 地理院地図 | 1 | 木ノ芽峠公衆便所の地図上の施設代表点。国土地理院コンテンツ利用規約と参照URLを台帳に記録しています。 |
+| **合計** | **1,073** | |
+
+Jageocoderのソフトウェアライセンス（MIT）は住所辞書データの許諾として扱っていません。利用条件と出典は[Jageocoder公式ページ](https://jageocoder.info-proto.com/license)および使用辞書に同梱されたREADMEの記述に基づきます。ただし、実行環境に導入されていた辞書の公式アーカイブ名・ハッシュは特定できず、個々の座標に使われた複合辞書内の構成データを特定できません。記録した辞書版情報と出典は、これらの不確実性を解消するものではありません。国土地理院住居表示住所を含む辞書README記載の承認番号は「国土地理院長承認（使用）R 7JHs 54」です。辞書そのものは公開データに含めていません。
+
+補完は、住所・自治体・施設名等の照合条件を満たした既存行の空欄座標に限って適用しました。座標参照点の性質と元出典の条件を確認して利用してください。全国の元データが不足しているため、空の環境から全国正規化CSVを完全再生成できることは確認できていません。現在の正規化データに補完台帳を再適用する手順と冪等性は検証しています。
+
 ## OpenStreetMap
 座標の一部にOpenStreetMap contributors のデータを使用しています。表示時は「© OpenStreetMap contributors」と明示し、データを配布する場合はODbL 1.0へのリンクを示してください。
 ライセンス: [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/)
@@ -26,27 +42,3 @@ ODbLでは、データベースを改変・派生して配布する場合に同�
 住所代表点・施設代表点の精度や個別の再利用条件はsource_id別の帰属CSVと元出典を確認してください。自治体等のサービス情報URLと座標出典URLを同一の出典として扱わないでください。
 
 参照: https://geolonia.github.io/japanese-addresses-v2/
-
-## 公衆トイレの住所座標補完
-
-`facilities-official.csv` の住所参照点による公衆トイレ補完は、Geolonia Japanese Addresses v2由来368件と、Jageocoder住所データベース由来680件です。レコード単位の照合住所、座標、精度、出典URL、利用条件、加工内容は `public-toilet-coordinate-attribution.csv` に記録しています。これらは住所参照点であり、トイレ入口の実測位置ではありません。
-
-出典: [Geolonia Japanese Addresses v2](https://github.com/geolonia/japanese-addresses-v2)
-ライセンス: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
-加工: 住所表記・自治体を照合し、施設レコードの空欄座標に住所参照点を追加。
-
-## Jageocoder住所データベースの公衆トイレ座標
-
-`facilities-official.csv` の公衆トイレ680件に、ローカルで使用した「jageocoder 用住所データベース（住居表示レベル）」の住所参照点を追加しました。デモサイト/APIは使用していません。辞書READMEの日付は2025-04-23です。Jageocoderライブラリは2.2.1.1、`dictionary_version()` の20230927は辞書形式の互換バージョンであり、住所データのリリース日・版番号ではありません。`installed_dictionary_version()` の20261025は辞書に `metadata.txt` がない場合のREADME更新日時のフォールバック値であり、データ版として扱いません。現存情報から公式配布アーカイブのファイル名までは確定できません。
-
-辞書READMEは、歴史的行政区域データセットβ版地名辞書、国土交通省の位置参照情報、Geolonia住所データ、国土地理院の電子国土基本図（地名情報）住居表示住所、日本郵便の郵便番号データ、デジタル庁アドレス・ベース・レジストリ、法務省の登記所備付地図データ（デジタル庁加工）を組み合わせた複合辞書と説明しています。使用READMEが記録するデータ時点は、歴史的行政区域2022年度版（2024-01-06取得）、国交省位置参照情報令和5年（大字町丁目17.0b／街区22.0a、2024-06-13取得）、Geolonia v0.6.6（2024-06-13取得）、国土地理院住居表示住所2025-03-26更新版（2025-04-03取得、承認R 7JHs 54）、郵便番号2025-03-31更新版、アドレス・ベース・レジストリ2025-03-31／04-01等更新分、登記所備付地図データ2024-05-09更新分（2025-04-03取得）です。READMEの利用条件では、歴史的行政区域とGeoloniaはCC BY 4.0、国交省・デジタル庁・登記所備付地図データは政府標準利用規約第2.0版、日本郵便データは自由配布、国土地理院住居表示住所は記載の測量法承認によるとされています。READMEに従い、公開成果物では次の出典・加工表示を行います。
-
-- 国土交通省「位置参照情報（大字町丁目・街区レベル）令和5年」を加工: https://nlftp.mlit.go.jp/cgi-bin/isj/dls/_choose_method.cgi
-- 国土地理院「電子国土基本図（地名情報）住居表示住所」を加工（国土地理院長承認（使用）R 7JHs 54）: https://www.gsi.go.jp/kihonjohochousa/jukyo_jusho.html
-- Geolonia Inc.「Geolonia 住所データ」を加工: https://geolonia.github.io/japanese-addresses/
-- デジタル庁「アドレス・ベース・レジストリ」を加工: https://www.digital.go.jp/policies/base_registry_address
-- 「登記所備付地図データ」（法務省）をデジタル庁が加工したデータを再加工: https://front.geospatial.jp/moj-chizu-xml-readme/
-
-Jageocoderのソフトウェアライセンス（MIT）は住所辞書データの利用許諾として扱っていません。住所データベースREADMEの利用条件では、商用・非商用利用が認められ、二次利用で上記の出典・加工を表示するよう定めています。辞書そのものを再配布するのではなく、住所に照合した座標をCSVの表データとして公開しています。詳細は[Jageocoder公式の利用条件・出典](https://jageocoder.info-proto.com/license)と、使用辞書に同梱された2025-04-23付READMEを参照してください。
-
-採用した680件は、自治体コード一致、住所文字列全体の一致、未解析末尾なしを確認したlevel 7または8の点です。level 7は街区・道路・地番、level 8は住居番号・枝番の住所参照点です。辞書の検索結果からは個々の点に使われた構成データセットを一意に割り当てられないため、辞書README記載の複合データ全体の出典を表示しています。住所代表点であり、各トイレの入口位置ではありません。照合住所・住所レベル・座標・辞書情報・加工内容は `public-toilet-coordinate-attribution.csv` を参照してください。

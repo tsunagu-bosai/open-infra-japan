@@ -11,6 +11,10 @@ CATALOG = ROOT / "catalog" / "datasets.csv"
 PROVENANCE = ROOT / "catalog" / "normalized_sources.csv"
 NORMALIZED = ROOT / "data" / "normalized"
 OUT = ROOT / "dist" / "facilities-official.csv"
+COORDINATE_SUPPLEMENTS = ROOT / "catalog" / "public_toilet_coordinate_supplements.csv"
+COORDINATE_ATTRIBUTION_OUT = ROOT / "dist" / "public-toilet-coordinate-attribution.csv"
+SUPPLEMENT_BY_PATH_ROW = {}
+SUPPLEMENT_BY_PATH_ID = {}
 
 FIELDS = [
     "facility_id",
@@ -260,6 +264,15 @@ def export_public_toilet(path, dataset_ids, catalog):
             }
 
             out.update(prov)
+            supplement = SUPPLEMENT_BY_PATH_ID.get((relpath, clean(r.get("ID"))))
+            if supplement is None:
+                supplement = SUPPLEMENT_BY_PATH_ROW.get((relpath, str(row_no)))
+            if supplement:
+                out["source_names"] += "|" + supplement["coordinate_source"]
+                out["source_urls"] += "|" + supplement["coordinate_source_url"]
+                out["licenses"] += "|" + supplement["license"]
+                out["license_urls"] += "|" + supplement["license_url"]
+                out["attributions"] += "|" + supplement["attribution"]
             yield out
 
 
@@ -349,6 +362,18 @@ def main():
     catalog = load_catalog()
     provenance = load_provenance()
 
+    global SUPPLEMENT_BY_PATH_ROW, SUPPLEMENT_BY_PATH_ID
+    with COORDINATE_SUPPLEMENTS.open(encoding="utf-8-sig", newline="") as f:
+        supplements = list(csv.DictReader(f))
+    SUPPLEMENT_BY_PATH_ROW = {
+        (r["normalized_path"], r["row_number"]): r for r in supplements
+    }
+    SUPPLEMENT_BY_PATH_ID = {
+        (r["normalized_path"], r["source_id"]): r
+        for r in supplements
+        if r.get("source_id", "").strip()
+    }
+
     public_files = sorted(
         NORMALIZED.glob(
             "*-*/*/public-toilet/public-toilet.csv"
@@ -421,6 +446,18 @@ def main():
     print("barrier-free:", barrier_count)
     print("total:", total)
     print("output:", OUT.relative_to(ROOT))
+
+    attribution_fields = [
+        "source_id", "facility_name", "source_address", "matched_address",
+        "latitude", "longitude", "coordinate_source", "coordinate_source_url",
+        "license", "license_url", "position_type", "precision",
+        "normalization_level", "point_level", "match_method", "attribution",
+    ]
+    with COORDINATE_ATTRIBUTION_OUT.open("w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=attribution_fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows({k: r[k] for k in attribution_fields} for r in supplements)
+    print("coordinate attribution:", len(supplements))
 
 
 if __name__ == "__main__":

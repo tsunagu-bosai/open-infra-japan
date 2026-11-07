@@ -22,12 +22,14 @@ dist/facilities-official.csv
 
 | 種別 | 件数 |
 | --- | ---: |
-| 公衆トイレ | 23,221 |
+| 公衆トイレ | 23,222 |
 | バリアフリー関連施設 | 11,308 |
-| 合計 | 34,529 |
+| 合計 | 34,530 |
 
 全国給水スポットとマイボトル割引サービスは、公衆トイレ等の統合CSVとは別に公開しています。
 検索用JSONは給水スポット4,093件と割引サービス2,111件、合計6,204件です。
+
+公衆トイレの住所・施設情報は23,222件です。公開CSVのうち1,073件は、施設ID・名称・住所を照合した既存行へ住所参照点または既存の自治体施設座標を補完しています。補完内訳はGeolonia 368件、Jageocoder 680件、自治体データ24件、国土地理院地図1件です。座標はトイレ入口の実測位置を必ずしも示しません。個別の出典、ライセンス、照合住所、位置の性質は [`dist/public-toilet-coordinate-attribution.csv`](dist/public-toilet-coordinate-attribution.csv) と [`dist/ATTRIBUTION.md`](dist/ATTRIBUTION.md) を参照してください。再適用台帳は `catalog/public_toilet_coordinate_supplements.csv` です。
 
 | データ | 件数 | ファイル |
 | --- | ---: | --- |

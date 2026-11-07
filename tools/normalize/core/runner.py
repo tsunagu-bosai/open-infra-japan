@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 import traceback
+import csv
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -376,6 +377,91 @@ def _output_files(output_dir: Path) -> list[Path]:
     if not output_dir.exists():
         return []
     return sorted(output_dir.rglob("public-toilet.csv"))
+
+
+def apply_coordinate_supplements(output_dir: Path, prefecture_code: str) -> int:
+    """Apply reviewed coordinate supplements after source normalization."""
+    output_dir = output_dir.resolve()
+    ledger = REPO_ROOT / "catalog" / "public_toilet_coordinate_supplements.csv"
+    if not ledger.is_file():
+        return 0
+    with ledger.open(encoding="utf-8-sig", newline="") as f:
+        entries = [r for r in csv.DictReader(f) if r.get("prefecture_code") == prefecture_code]
+    if not entries:
+        return 0
+    by_id = {}
+    by_source_id = {}
+    for entry in entries:
+        key = (entry["normalized_path"], entry["row_number"])
+        if key in by_id:
+            raise RuntimeError(f"duplicate coordinate supplement row: {key}")
+        by_id[key] = entry
+        source_id = (entry.get("source_id") or "").strip()
+        if source_id:
+            id_key = (entry["normalized_path"], source_id)
+            if id_key in by_source_id:
+                raise RuntimeError(f"duplicate coordinate supplement source ID: {id_key}")
+            by_source_id[id_key] = entry
+    verified = set()
+    source_ids_by_path = {}
+    rows_by_path = {}
+    for path in _output_files(output_dir):
+        with path.open(encoding="utf-8-sig", newline="") as f:
+            reader = csv.DictReader(f)
+            fields = reader.fieldnames or []
+            rows = list(reader)
+        changed = False
+        relpath = path.relative_to(REPO_ROOT / "data" / "normalized").as_posix()
+        normalized_path = f"data/normalized/{relpath}"
+        source_ids_by_path[normalized_path] = {
+            (row.get("ID") or "").strip() for row in rows
+        }
+        rows_by_path[normalized_path] = rows
+        for row_number, row in enumerate(rows, 1):
+            entry = by_source_id.get((normalized_path, (row.get("ID") or "").strip()))
+            if entry is None:
+                row_entry = by_id.get((normalized_path, str(row_number)))
+                if row_entry and not (row_entry.get("source_id") or "").strip():
+                    entry = row_entry
+            if not entry:
+                continue
+            if ((row.get("ID") or "").strip() != entry["source_id"]
+                    or (row.get("名称") or "").strip() != entry["facility_name"]
+                    or (row.get("所在地_連結表記") or "").strip() != entry["source_address"]):
+                raise RuntimeError(f"coordinate supplement address mismatch: {entry['source_id']}")
+            key = (entry["normalized_path"], entry["row_number"])
+            if key in verified:
+                raise RuntimeError(f"coordinate supplement matched multiple output rows: {key}")
+            current_lat = (row.get("緯度") or "").strip()
+            current_lon = (row.get("経度") or "").strip()
+            expected_lat = entry["latitude"].strip()
+            expected_lon = entry["longitude"].strip()
+            if not current_lat and not current_lon:
+                row["緯度"], row["経度"] = expected_lat, expected_lon
+                changed = True
+            elif not current_lat or not current_lon:
+                raise RuntimeError(f"coordinate supplement has one-sided coordinates: {entry['source_id']}")
+            elif current_lat != expected_lat or current_lon != expected_lon:
+                raise RuntimeError(f"coordinate supplement coordinate mismatch: {entry['source_id']}")
+            verified.add(key)
+        if changed:
+            tmp = path.with_suffix(".csv.supplement-tmp")
+            with tmp.open("w", encoding="utf-8-sig", newline="") as f:
+                writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+                writer.writeheader()
+                writer.writerows(rows)
+            tmp.replace(path)
+    missing = set(by_id) - verified
+    if missing:
+        for key in sorted(missing):
+            entry = by_id[key]
+            source_id = (entry.get("source_id") or "").strip()
+            output_rows = rows_by_path.get(key[0], [])
+            if (source_id and source_id not in source_ids_by_path.get(key[0], set())
+                    and int(key[1]) <= len(output_rows)):
+                raise RuntimeError(f"coordinate supplement address mismatch: {source_id}")
+        raise RuntimeError("coordinate supplements not found after normalization: " + repr(sorted(missing)[:10]))
+    return len(verified)
 
 
 def _code_from_output_path(path: Path, output_dir: Path) -> str | None:
@@ -891,6 +977,10 @@ def execute_prefecture(
         result = record_failure(label, error)
         if result is not None:
             return result
+
+    supplement_count = apply_coordinate_supplements(output_dir, prefecture_code)
+    if supplement_count:
+        reporter.log(f"Reviewed coordinate supplements applied: {supplement_count}")
 
     if validate:
         index += 1
