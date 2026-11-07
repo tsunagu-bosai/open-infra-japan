@@ -1,0 +1,17 @@
+﻿existing_discount_id,existing_name,candidate_brand_id,nearest_osm_id,nearest_osm_name,distance_m,match_status,match_evidence,decision
+discount-FUK-B-002,ケア工房美いず,,,,,different_brand_or_not_in_five_chain_scope,,retain_existing_record
+discount-FUK-B-007,カフェみっとん,,,,,different_brand_or_not_in_five_chain_scope,,retain_existing_record
+discount-KNG1-YOK-06,Freshness Burger ジャングルカフェ（よこはま動物園ズーラシア）,,,,,different_brand_or_not_in_five_chain_scope,,retain_existing_record
+discount-KNG1-YOK-08,ナチュラルローソン みなとみらい四丁目店,,,,,different_brand_or_not_in_five_chain_scope,,retain_existing_record
+discount-KNG1-YOK-09,Starbucks 横浜市役所 ラクシスフロント店,starbucks,n8454375211,スターバックス,123.6,possible_duplicate_distance_only,distance_only; no branch-name or detailed-address match,retain_both_pending_manual_review
+discount-YB-B-20260818-001,タリーズコーヒー 山形松見町店,tullys_coffee,n5474418572,タリーズコーヒー,45161.8,no_nearby_candidate,no same-chain candidate within 150m,retain_both
+discount-YB-B-20260818-002,タリーズコーヒー 山形七日町店,tullys_coffee,n5519537639,タリーズコーヒー,45423.2,no_nearby_candidate,no same-chain candidate within 150m,retain_both
+discount-YB-B-20260818-010,スターバックスコーヒー 山形エスパル店,starbucks,n4871553022,スターバックス,63.2,possible_duplicate_distance_only,distance_only; no branch-name or detailed-address match,retain_both_pending_manual_review
+discount-YB-B-20260818-011,スターバックスコーヒー 山形白山店,starbucks,n5002782758,スターバックス,16.2,possible_duplicate_distance_only,distance_only; no branch-name or detailed-address match,retain_both_pending_manual_review
+discount-YB-B-20260818-012,スターバックスコーヒー 山形馬見ヶ崎店,starbucks,w304345931,スターバックス,21.4,possible_duplicate_distance_only,distance_only; no branch-name or detailed-address match,retain_both_pending_manual_review
+discount-YB-B-20260818-013,スターバックスコーヒー 山形県立中央病院店,starbucks,n5008845137,スターバックス,49.6,possible_duplicate_distance_only,distance_only; no branch-name or detailed-address match,retain_both_pending_manual_review
+discount-YB-B-20260818-025,スターバックスコーヒー イオンモール天童店,starbucks,n5006911153,スターバックス,365.7,no_nearby_candidate,no same-chain candidate within 150m,retain_both
+discount-YB-B-20260818-026,スターバックスコーヒー 天童鎌田店,starbucks,n5006911153,スターバックス,2605.5,no_nearby_candidate,no same-chain candidate within 150m,retain_both
+discount-YB-B-20260818-038,スターバックスコーヒー 米沢春日店,starbucks,w1431078185,スターバックス コーヒー 米沢春日店,28.4,same_store_by_store_specific_evidence,store_specific_name_match,link_existing_record_and_suppress_duplicate_location
+discount-YB-B-20260818-049,スターバックスコーヒー 鶴岡店,starbucks,w804537008,スターバックス,19.4,same_store_by_store_specific_evidence,specific_address_match,link_existing_record_and_suppress_duplicate_location
+discount-YB-B-20260818-052,スターバックスコーヒー 酒田みずほ店,starbucks,w344640402,スターバックス,66.9,possible_duplicate_distance_only,distance_only; no branch-name or detailed-address match,retain_both_pending_manual_review

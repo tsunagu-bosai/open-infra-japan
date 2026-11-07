@@ -1,0 +1,68 @@
+{
+  "as_of_year": 2026,
+  "ready_candidates": 4102,
+  "coordinate_missing": 9,
+  "free_public_rows": 4093,
+  "discount_public_rows": 16,
+  "combined_service_rows": 4109,
+  "free_service_type_counts": {
+    "free_refill": 813,
+    "unknown": 3280
+  },
+  "assessment_water_fee_status_counts": {
+    "unconfirmed": 3280,
+    "yes": 813
+  },
+  "discount_service_type_counts": {
+    "discount": 15,
+    "both": 1
+  },
+  "seasonal_override_ids_total": 86,
+  "seasonal_override_ids_active_as_of_year": 86,
+  "seasonal_true_public_rows": 84,
+  "seasonal_override_ids_missing_coordinates": [
+    "20446-9B5EF1303CC37E17",
+    "20450-882BAF1926566831"
+  ],
+  "overlap_relationships_distinct_services": 1,
+  "coordinate_attribution_rows": 4093,
+  "discount_coordinate_attribution_rows": 16,
+  "discount_coordinate_source_counts": {
+    "geolonia": 11,
+    "gsi": 5
+  },
+  "coordinate_sources": {
+    "openstreetmap": 440,
+    "geolonia_address_data": 298,
+    "gsi": 15,
+    "normalized_source_record": 1675
+  },
+  "checks": {
+    "free_rows_4093": true,
+    "ready_4102": true,
+    "all_ready_coordinate_source_ids_emitted": true,
+    "discount_rows_16": true,
+    "discount_types_15_plus_1_both": true,
+    "free_source_id_duplicates_zero": true,
+    "discount_id_duplicates_zero": true,
+    "candidate_id_duplicates_zero": true,
+    "required_fields_complete": true,
+    "coordinates_in_range": true,
+    "seasonal_true_84": true,
+    "season_note_matches_true": true,
+    "seasonal_locks_regression_ids_preserved": true,
+    "seasonal_registry_matches_known_86": true,
+    "no_expired_year_bound_seasonal_true": true,
+    "coordinate_attribution_separate_from_service_url": true,
+    "coordinate_reference_populated": true,
+    "discount_coordinate_attribution_complete": true,
+    "discount_geolonia_replacement_set_matches_review": true,
+    "osm_coordinate_license_attribution_complete": true,
+    "geolonia_coordinate_license_attribution_complete": true,
+    "overlap_relationship_does_not_merge_rows": true,
+    "declared_same_building_relationship_preserved": true,
+    "public_schemas_exact": true,
+    "no_internal_audit_fields_in_main_public_csvs": true
+  },
+  "errors": []
+}

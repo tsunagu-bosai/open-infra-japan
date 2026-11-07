@@ -56,6 +56,18 @@ catalog/normalized_sources.csv
 
 で確認できます。
 
+## 給水スポット公開データ
+
+`dist/refill-water-spots.csv` と `dist/refill-discount-services.csv` の
+`source_url` は給水・割引サービスの情報提供元を示します。座標の出典・帰属は
+`dist/refill-publication-attribution.csv`、`dist/refill-discount-coordinate-attribution.csv`、
+`dist/ATTRIBUTION.md` に分けて記録しています。
+サービス情報のURLを座標データのライセンスや出典の代わりに使用しないでください。
+
+これらのデータにも、各情報提供元・座標データ提供元の利用条件が適用されます。
+OSM、Geolonia、国土地理院等の個別の帰属・利用条件は `dist/ATTRIBUTION.md` と
+source_id別の帰属CSVを確認してください。本節は既存のデータライセンスを変更するものではありません。
+
 ## ライセンスが不明なデータ
 
 元データのライセンスや利用条件を明確に確認できない場合があります。

@@ -1,0 +1,17 @@
+﻿discount_id,candidate_id,facility_name,address,latitude,longitude,source_url,service_type,discount_content
+discount-FUK-B-002,FUK-B-002,ケア工房美いず,福島県福島市上町3-4 コマ福島ビル1F,37.754907,140.468819,https://www.pref.fukushima.lg.jp/uploaded/attachment/593655.pdf,discount,水素水は有料。マイボトル等の容器持参者に100円キャッシュバック。
+discount-FUK-B-007,FUK-B-007,カフェみっとん,福島県いわき市内郷綴町秋山61,37.031899,140.856362,https://www.pref.fukushima.lg.jp/uploaded/attachment/593655.pdf,discount,コーヒー・茶等の販売時に持参容器へ提供。飲料購入時20円引き。
+discount-KNG1-YOK-06,KNG1-YOK-06,Freshness Burger ジャングルカフェ（よこはま動物園ズーラシア）,神奈川県横浜市旭区上白根町1175-1,35.493549,139.527102,https://mybottlespot.city.yokohama.lg.jp/spot.php?id=52,both,20円引き
+discount-KNG1-YOK-08,KNG1-YOK-08,ナチュラルローソン みなとみらい四丁目店,神奈川県横浜市西区みなとみらい4-7,35.459442,139.630386,https://mybottlespot.city.yokohama.lg.jp/spot.php?id=200,discount,10円引き
+discount-KNG1-YOK-09,KNG1-YOK-09,Starbucks 横浜市役所 ラクシスフロント店,神奈川県横浜市中区本町6-50-10,35.450195,139.634903,https://mybottlespot.city.yokohama.lg.jp/spot.php?id=340,discount,20円引き
+discount-YB-B-20260818-001,YB-B-20260818-001,タリーズコーヒー 山形松見町店,山形市松見町21-10 ヤマザワ松見町店内,38.231425,140.340753,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,マイボトルを利用してドリンクを購入した場合、全ドリンク30円値引き。セット等との併用不可。
+discount-YB-B-20260818-002,YB-B-20260818-002,タリーズコーヒー 山形七日町店,山形市七日町2-1-8 イイナス1F,38.252618,140.338919,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,マイボトルを利用してドリンクを購入した場合、全ドリンク30円値引き。セット等との併用不可。
+discount-YB-B-20260818-010,YB-B-20260818-010,スターバックスコーヒー 山形エスパル店,山形市香澄町1-1-1 エスパル山形,38.248405,140.327972,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-011,YB-B-20260818-011,スターバックスコーヒー 山形白山店,山形市白山3-9-24,38.225476,140.320017,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-012,YB-B-20260818-012,スターバックスコーヒー 山形馬見ヶ崎店,山形市馬見ヶ崎2-7-28,38.281463,140.331620,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-013,YB-B-20260818-013,スターバックスコーヒー 山形県立中央病院店,山形市青柳1800 山形県立中央病院,38.300449,140.346176,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-025,YB-B-20260818-025,スターバックスコーヒー イオンモール天童店,天童市芳賀タウン北4-1-1 イオンモール天童,38.345301,140.364974,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-026,YB-B-20260818-026,スターバックスコーヒー 天童鎌田店,天童市鎌田2-5-24,38.355613,140.387584,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-038,YB-B-20260818-038,スターバックスコーヒー 米沢春日店,米沢市春日2-13-27,37.923086,140.106494,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-049,YB-B-20260818-049,スターバックスコーヒー 鶴岡店,鶴岡市上畑町3-30,38.736037,139.829502,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
+discount-YB-B-20260818-052,YB-B-20260818-052,スターバックスコーヒー 酒田みずほ店,酒田市みずほ1-20-6,38.903500,139.849518,https://www.pref.yamagata.jp/050010/kurashi/kankyo/recycle/mybottle.html,discount,タンブラー持参でドリンク22円引き（店内）・21円引き（持帰り）。
