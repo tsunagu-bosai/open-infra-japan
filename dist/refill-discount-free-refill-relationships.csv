@@ -1,2 +1,2 @@
 ﻿candidate_id,discount_id,free_source_id,relation,distance_m,notes
-KNG1-YOK-09,discount-KNG1-YOK-09,14104-E8C151C1F404E204,same_building_distinct_service,5.4,同一建物の別事業者・別サービス。無料属性を割引サービスへ統合しない。
+KNG1-YOK-09,discount-KNG1-YOK-09,14104-E8C151C1F404E204,same_building_distinct_service,123.5,同一建物の別事業者・別サービス。無料属性を割引サービスへ統合しない。

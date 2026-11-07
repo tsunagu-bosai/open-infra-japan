@@ -138,13 +138,26 @@ open-infra-japan/
 ├── tools/
 │   ├── export/
 │   ├── normalize/
+│   │   ├── barrier-free/
+│   │   ├── core/
+│   │   ├── implementations/
+│   │   ├── prefectures/
+│   │   ├── regions/
+│   │   └── tests/
 │   ├── schema/
 │   ├── download.py
 │   ├── inspect_datasets.py
 │   ├── normalize_public_toilet.py
-│   └── validate_public_toilet.py
+│   ├── validate_public_toilet.py
+│   └── validate_refill_publication.py
 │
 ├── docs/
+│   └── refill-water-spots.md
+├── patches/
+│   └── public-toilet/
+├── .github/
+│   └── workflows/validate.yml
+├── requirements.txt
 ├── GETTING_STARTED.md
 ├── LICENSE
 ├── LICENSE-DATA.md

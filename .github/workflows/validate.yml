@@ -30,6 +30,10 @@ jobs:
         run: |
           python tools/validate_public_toilet.py --input normalized
 
+      - name: Validate refill publication data
+        run: |
+          python tools/validate_refill_publication.py --as-of-year 2026
+
       - name: Rebuild combined export
         run: |
           python tools/export/export_facilities.py
