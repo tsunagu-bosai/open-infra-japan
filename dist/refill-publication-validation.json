@@ -29,7 +29,7 @@
   "discount_coordinate_attribution_rows": 16,
   "discount_coordinate_source_counts": {
     "geolonia": 11,
-    "gsi": 5
+    "osm": 5
   },
   "coordinate_sources": {
     "openstreetmap": 440,
@@ -56,6 +56,7 @@
     "coordinate_attribution_separate_from_service_url": true,
     "coordinate_reference_populated": true,
     "discount_coordinate_attribution_complete": true,
+    "no_unresolved_gsi_address_api_discount_coordinates": true,
     "discount_geolonia_replacement_set_matches_review": true,
     "osm_coordinate_license_attribution_complete": true,
     "geolonia_coordinate_license_attribution_complete": true,

@@ -8,10 +8,10 @@
 | --- | ---: | --- |
 | [`../dist/refill-water-spots.csv`](../dist/refill-water-spots.csv) | 4,093 | 座標がある公式掲載給水スポット（料金未確認を含む） |
 | [`../dist/refill-discount-services.csv`](../dist/refill-discount-services.csv) | 16 | 既存形式のマイボトル割引サービス |
-| [`../dist/mybottle-discount-locations-*.csv`](../dist/) | 2,102 | チェーン店舗候補（既存リンク2件を除き、新規位置2,100件） |
-| [`../dist/water-search-facilities.json`](../dist/water-search-facilities.json) | 6,208 | 給水スポットと割引サービスの検索用結合データ（給水4,093、割引2,115） |
+| [`../dist/mybottle-discount-locations-*.csv`](../dist/) | 2,102 | チェーン店舗候補（既存リンク6件と別業態確認待ち1件を除き、新規位置2,095件） |
+| [`../dist/water-search-facilities.json`](../dist/water-search-facilities.json) | 6,204 | 給水スポットと割引サービスの検索用結合データ（給水4,093、割引2,111） |
 | [`../dist/refill-publication-attribution.csv`](../dist/refill-publication-attribution.csv) | 4,093 | 給水CSV各行のサービス情報元と座標出典・帰属 |
-| [`../dist/refill-discount-coordinate-attribution.csv`](../dist/refill-discount-coordinate-attribution.csv) | 16 | 既存割引店舗の座標出典（Geolonia 11件、国土地理院住所検索5件） |
+| [`../dist/refill-discount-coordinate-attribution.csv`](../dist/refill-discount-coordinate-attribution.csv) | 16 | 既存割引店舗の座標出典（Geolonia 11件、OpenStreetMap 5件） |
 | [`../dist/ATTRIBUTION.md`](../dist/ATTRIBUTION.md) | — | 出典・帰属の表示案内 |
 
 2026年版の給水CSVには `seasonal=true` の施設が84件あります。掲載候補4,102件のうち座標がない9件は、地図用CSVには含めていません。座標がないことを理由に内部の掲載候補自体を削除したものではありません。
@@ -47,7 +47,7 @@
 
 ## 出典・帰属
 
-各CSVの `source_url` は給水・割引サービス情報の提供元です。給水座標の出典は `refill-publication-attribution.csv`、既存割引店舗16件の座標出典は `refill-discount-coordinate-attribution.csv` の `coordinate_source_reference` / `coordinate_source_name` に記録しています（Geolonia 11件、国土地理院住所検索5件）。GSI住所検索由来の5件は住所代表点であり、店舗入口などの正確な位置ではありません。再利用条件が未確認のため、公開前に確認が必要です。新規チェーン店舗候補2,102件はOSM由来で、重複照合の確定リンク2件を除き、別業態確認待ち1件を検索対象から除外しています。Google Mapsの表示中心は公開座標に使用していません。OSM、Geolonia、国土地理院等の表示方法・利用条件は [`../dist/ATTRIBUTION.md`](../dist/ATTRIBUTION.md) と各帰属CSVを参照してください。サービスの情報提供元URLを座標の帰属表記の代用にしないでください。
+各CSVの `source_url` は給水・割引サービス情報の提供元です。給水座標の出典は `refill-publication-attribution.csv`、既存割引店舗16件の座標出典は `refill-discount-coordinate-attribution.csv` の `coordinate_source_reference` / `coordinate_source_name` に記録しています（Geolonia 11件、OSM 5件）。住所検索API由来だった5件は、利用条件が確認できないため公開座標から除き、各施設周辺のOSM代表点へ置き換えました。新規チェーン店舗候補2,102件はOSM由来で、重複照合の確定リンク6件を除き、別業態確認待ち1件を検索対象から除外しています。施設内・敷地内の店舗は施設周辺の案内用位置を使い、入口位置の精度を保証しません。OSM、Geolonia等の表示方法・利用条件は [`../dist/ATTRIBUTION.md`](../dist/ATTRIBUTION.md) と各帰属CSVを参照してください。サービスの情報提供元URLを座標の帰属表記の代用にしないでください。
 
 タリーズコーヒー横浜市大附属病院店は閉店が確認されたため、現行の割引サービス一覧から除外しています。横浜市立大学の現行院内案内はCAFÉ COREを掲載し、同大学のキャンパスマップにはタリーズからCAFÉ COREへ変更した旨があります。
 

@@ -63,7 +63,7 @@ def validate(year: int) -> list[str]:
         require(not (DIST / "refill-water-spots-free.csv").exists(), "obsolete filename remains: dist/refill-water-spots-free.csv")
         attribution_md = attribution_md_path.read_text(encoding="utf-8")
         require("refill-discount-coordinate-attribution.csv" in attribution_md and "国土地理院" in attribution_md,
-                "ATTRIBUTION.md must document GSI coordinates for discount services")
+                "ATTRIBUTION.md must document discount coordinate provenance and the prior GSI review")
         for required in (
             "Geolonia Japanese Addresses v2",
             "@geolonia/normalize-japanese-addresses 3.1.3",
@@ -115,6 +115,12 @@ def validate(year: int) -> list[str]:
         require(len(discount_attr_ids) == len(set(discount_attr_ids)), "discount coordinate attribution IDs are duplicated")
         require(set(discount_attr_ids) == set(discount_by_id), "discount coordinate attribution discount_id set differs from discount CSV")
         discount_by_candidate = {row["candidate_id"].strip(): row for row in discount}
+        require(sum("openstreetmap.org/" in row["coordinate_source_reference"] for row in discount_attribution) == 5,
+                "five reviewed discount coordinate rows must use OSM venue-area coordinates")
+        require(sum("japanese-addresses-v2.geoloniamaps.com/api/ja/" in row["coordinate_source_reference"] for row in discount_attribution) == 11,
+                "eleven discount coordinate rows must use Geolonia address data")
+        require(not any("msearch.gsi.go.jp/address-search/AddressSearch" in row["coordinate_source_reference"] for row in discount_attribution),
+                "unresolved GSI address-search coordinates must not remain in discount CSV")
         for row in discount_attribution:
             for field in DISCOUNT_ATTRIBUTION_FIELDS:
                 require(bool(row.get(field, "").strip()), f"discount coordinate attribution has blank {field}: {row.get('candidate_id')}")
@@ -128,8 +134,12 @@ def validate(year: int) -> list[str]:
                 require("Geolonia" in name, f"discount Geolonia coordinate source name is missing: {candidate_id}")
                 require("https://creativecommons.org/licenses/by/4.0/deed.ja" in row["coordinate_attribution"],
                         f"discount Geolonia CC BY 4.0 attribution is missing: {candidate_id}")
+            elif "openstreetmap.org/" in ref:
+                require("OpenStreetMap" in name, f"discount OSM coordinate source name is missing: {candidate_id}")
+                require("ODbL" in row["coordinate_attribution"] and "openstreetmap.org/copyright" in row["coordinate_attribution"],
+                        f"discount OSM attribution/license is missing: {candidate_id}")
             else:
-                require("msearch.gsi.go.jp/address-search/AddressSearch" in ref, f"discount coordinate reference is not Geolonia or GSI: {candidate_id}")
+                require("msearch.gsi.go.jp/address-search/AddressSearch" in ref, f"discount coordinate reference is not Geolonia, OSM, or GSI: {candidate_id}")
                 require("国土地理院" in name, f"discount coordinate source name is missing GSI: {candidate_id}")
                 require("未確認" in row["coordinate_attribution"], f"unresolved GSI terms are not disclosed: {candidate_id}")
 

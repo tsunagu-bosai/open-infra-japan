@@ -4,7 +4,7 @@
 
 全国の自治体・公的機関が公開している施設オープンデータを収集し、共通形式で利用できるよう整理・正規化するプロジェクトです。
 
-現在は主に **公衆トイレ** と **バリアフリー関連施設** のデータを整備しています。
+現在は **公衆トイレ**、**バリアフリー関連施設**、**全国給水スポット** のデータを整備しています。
 
 防災、避難、地域サービス、地図アプリ、データ分析などで再利用しやすい形にすることを目的としています。
 
@@ -25,6 +25,27 @@ dist/facilities-official.csv
 | 公衆トイレ | 23,221 |
 | バリアフリー関連施設 | 11,308 |
 | 合計 | 34,529 |
+
+全国給水スポットとマイボトル割引サービスは、公衆トイレ等の統合CSVとは別に公開しています。
+検索用JSONは給水スポット4,093件と割引サービス2,111件、合計6,204件です。
+
+| データ | 件数 | ファイル |
+| --- | ---: | --- |
+| 給水スポット | 4,093 | `dist/refill-water-spots.csv` |
+| 既存形式のマイボトル割引サービス | 16 | `dist/refill-discount-services.csv` |
+| チェーン店舗候補 | 2,102 | `dist/mybottle-discount-locations-*.csv`（確定重複6件は統合し、別業態確認待ち1件は検索対象外） |
+| チェーン共通サービス制度 | 5 | `dist/mybottle-discount-chain-services.csv` |
+| 既存店舗との照合 | 16 | `dist/mybottle-discount-existing-record-reconciliation.csv` |
+| 給水・割引の検索用結合データ | 6,204 | `dist/water-search-facilities.json`（給水4,093、割引2,111） |
+| 給水スポットの出典・座標帰属 | 4,093 | `dist/refill-publication-attribution.csv` |
+| 既存割引サービスの座標帰属 | 16 | `dist/refill-discount-coordinate-attribution.csv` |
+| 期間限定（2026年版） | 84 | 給水CSVの `seasonal=true` |
+| 座標未登録の掲載候補 | 9 | 地図用公開CSVには含めません |
+
+給水スポットは公共・民間の区分を確定していません。掲載情報は現在の営業状況、設備の稼働、店舗での割引サービス提供を保証しません。利用前に各施設・事業者の最新情報を確認してください。
+既存割引16件の座標のうち11件はGeolonia住所データ、5件はOpenStreetMap由来です。国土地理院住所検索API応答由来だった5件は、再配布条件が確認できないため公開CSVから除き、施設周辺のOSM代表点に置き換えました。OSMの帰属・ODbL情報を含む詳細は [`dist/ATTRIBUTION.md`](dist/ATTRIBUTION.md) と [`dist/mybottle-discount-OSM-ATTRIBUTION.md`](dist/mybottle-discount-OSM-ATTRIBUTION.md) を参照してください。
+
+出典・座標帰属と利用条件は [`dist/ATTRIBUTION.md`](dist/ATTRIBUTION.md)、OSM由来の店舗位置とODbLの説明は [`dist/mybottle-discount-OSM-ATTRIBUTION.md`](dist/mybottle-discount-OSM-ATTRIBUTION.md)、データの列・分類・更新方法は [`docs/refill-water-spots.md`](docs/refill-water-spots.md) と [`LICENSE-DATA.md`](LICENSE-DATA.md) を参照してください。
 
 自治体・都道府県ごとの正規化済みデータは、
 
@@ -94,7 +115,18 @@ open-infra-japan/
 │       └── municipalities.csv
 │
 ├── dist/
-│   └── facilities-official.csv
+│   ├── facilities-official.csv
+│   ├── refill-water-spots.csv
+│   ├── refill-discount-services.csv
+│   ├── refill-publication-attribution.csv
+│   ├── refill-discount-coordinate-attribution.csv
+│   ├── refill-discount-free-refill-relationships.csv
+│   ├── mybottle-discount-locations-*.csv
+│   ├── mybottle-discount-chain-services.csv
+│   ├── mybottle-discount-existing-record-reconciliation.csv
+│   ├── water-search-facilities.json
+│   ├── mybottle-discount-OSM-ATTRIBUTION.md
+│   └── ATTRIBUTION.md
 │
 ├── schema/
 │   └── standard/
