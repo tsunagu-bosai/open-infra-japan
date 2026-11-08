@@ -29,6 +29,7 @@ DISCOUNT_ATTRIBUTION_FIELDS = [
     "discount_id", "candidate_id", "facility_name", "coordinate_source_reference",
     "coordinate_source_name", "coordinate_attribution",
 ]
+SERVICE_EVIDENCE_FIELDS = ["source_id", "service_type", "evidence_url", "evidence_as_of", "evidence_note"]
 AUDIT_FIELDS = {
     "audit_reason", "evidence_text", "evidence_reference", "review_status",
     "review_history", "candidate_latitude", "candidate_longitude", "notes",
@@ -58,6 +59,7 @@ def validate(year: int) -> list[str]:
         discount_header, discount = read_csv(DIST / "refill-discount-services.csv")
         attribution_header, attribution = read_csv(DIST / "refill-publication-attribution.csv")
         discount_attribution_header, discount_attribution = read_csv(DIST / "refill-discount-coordinate-attribution.csv")
+        evidence_header, service_evidence = read_csv(DIST / "refill-service-evidence.csv")
         attribution_md_path = DIST / "ATTRIBUTION.md"
         require(attribution_md_path.is_file(), "required publication file is missing: dist/ATTRIBUTION.md")
         require(not (DIST / "refill-water-spots-free.csv").exists(), "obsolete filename remains: dist/refill-water-spots-free.csv")
@@ -81,6 +83,7 @@ def validate(year: int) -> list[str]:
         require(discount_header == DISCOUNT_FIELDS, f"discount CSV columns differ from schema: {discount_header}")
         require(attribution_header == ATTRIBUTION_FIELDS, f"attribution CSV columns differ from schema: {attribution_header}")
         require(discount_attribution_header == DISCOUNT_ATTRIBUTION_FIELDS, f"discount attribution CSV columns differ from schema: {discount_attribution_header}")
+        require(evidence_header == SERVICE_EVIDENCE_FIELDS, f"service evidence columns differ from schema: {evidence_header}")
         require(not (AUDIT_FIELDS & set(free_header + discount_header + attribution_header + discount_attribution_header)), "internal audit columns found in a public CSV")
 
         require(len(free) == 4093, f"expected 4093 refill rows, found {len(free)}")
@@ -103,9 +106,19 @@ def validate(year: int) -> list[str]:
                 require(math.isfinite(lat) and math.isfinite(lon) and -90 <= lat <= 90 and -180 <= lon <= 180,
                         f"{label} row {row.get('source_id') or row.get('discount_id')} has out-of-range coordinates")
 
-        require(all(row["service_type"] in {"free_refill", "unknown"} for row in free), "refill CSV contains an invalid service_type")
-        require(sum(row["service_type"] == "free_refill" for row in free) == 813, "free_refill count differs from the 2026 publication baseline (813)")
-        require(sum(row["service_type"] == "unknown" for row in free) == 3280, "unknown count differs from the 2026 publication baseline (3280)")
+        require(all(row["service_type"] in {"free_refill", "paid_refill", "unknown"} for row in free), "refill CSV contains an invalid service_type")
+        require(sum(row["service_type"] == "free_refill" for row in free) == 876, "free_refill count differs from the corrected 2026 baseline (876)")
+        require(sum(row["service_type"] == "paid_refill" for row in free) == 12, "paid_refill count differs from the corrected 2026 baseline (12)")
+        require(sum(row["service_type"] == "unknown" for row in free) == 3205, "unknown count differs from the corrected 2026 baseline (3205)")
+        evidence_ids = [row["source_id"].strip() for row in service_evidence]
+        require(len(evidence_ids) == len(set(evidence_ids)) and len(evidence_ids) == 75, "service evidence IDs are duplicated or count differs from the reviewed Osaka subset")
+        free_by_id = {row["source_id"].strip(): row for row in free}
+        require(set(evidence_ids) <= set(free_by_id), "service evidence references a source_id absent from the public refill CSV")
+        for row in service_evidence:
+            require(all(row[field].strip() for field in SERVICE_EVIDENCE_FIELDS), f"service evidence has a blank required field: {row.get('source_id')}")
+            require(row["service_type"] in {"free_refill", "paid_refill"}, f"invalid service evidence type: {row.get('source_id')}")
+            require(row["evidence_url"] == "https://www.pref.osaka.lg.jp/documents/941/3_r1-1.pdf" and row["evidence_as_of"] == "2022-02-22", f"unexpected Osaka evidence reference/date: {row.get('source_id')}")
+            require(free_by_id[row["source_id"]]["service_type"] == row["service_type"], f"service evidence classification mismatch: {row.get('source_id')}")
         require(all(row["service_type"] in {"discount", "both"} for row in discount), "discount CSV contains an invalid service_type")
         require(sum(row["service_type"] == "discount" for row in discount) == 15 and sum(row["service_type"] == "both" for row in discount) == 1,
                 "discount service counts must be 15 discount and 1 both")

@@ -6,9 +6,11 @@
   "discount_public_rows": 16,
   "combined_service_rows": 4109,
   "free_service_type_counts": {
-    "free_refill": 813,
-    "unknown": 3280
+    "free_refill": 876,
+    "paid_refill": 12,
+    "unknown": 3205
   },
+  "service_evidence_rows": 75,
   "assessment_water_fee_status_counts": {
     "unconfirmed": 3280,
     "yes": 813

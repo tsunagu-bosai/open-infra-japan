@@ -1,6 +1,7 @@
 # 給水スポット公開データの出典・帰属
 
 給水サービスの情報提供元は `refill-water-spots.csv` / `refill-discount-services.csv` の `source_url` を参照してください。
+大阪府の料金区分を確認した75件の歴史的根拠（2022-02-22時点）は `refill-service-evidence.csv` に記録しています。現在の料金・営業状況を示すものではありません。
 座標の出典は `refill-publication-attribution.csv` の `coordinate_source_reference` と `coordinate_source_name` に、サービス情報とは別に記録しています。
 割引16件の座標出典は `refill-discount-coordinate-attribution.csv` に収録しています。Geolonia住所データの住所代表点と、OpenStreetMap由来の施設周辺代表点をsource_idごとに区別しています。国土地理院住所検索API由来だった5件は、出典と再利用条件が確認できるOSM座標へ置き換えました。2022年3月31日に閉店したタリーズコーヒー横浜市大附属病院店は現行サービスCSVから除外しています。
 給水スポットや店舗の営業状況・設備稼働・個別のサービス提供状況には未確認のものがあり、掲載は現況を保証しません。
